@@ -1,3 +1,15 @@
+# Test File
+test.py
+
+# Confict file
+config.py
+
+# Mac OS File
+.DS_Store
+
+# VScode
+.vscode
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
