@@ -111,20 +111,4 @@ class WebDriver(webdriver.Chrome, DriverUtils):
             options         = options
         )
 
-
-
-if __name__ == "__main__":
-    login_url = "https://wis.hufs.ac.kr/src08/jsp/index.jsp"
-
-    
-    driver = WebDriver()
-    driver.get(login_url)
-
-    driver.get_element_by_xapth()
-
-    user_id = driver.get_element_by_xpath('/html/body/div[1]/form[3]/div[2]/div/div[2]/div/input[1]')
-    user_pw = driver.get_element_by_xpath('//*[@id="password"]')
-
-    user_id.send_keys("201602719")
-    user_pw.send_keys("GK2ahdzl2!")
     

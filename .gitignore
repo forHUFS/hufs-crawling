@@ -4,6 +4,13 @@ test.py
 # Confict file
 config.py
 
+# Lambda Upload Zip file
+lambda_function.Zip
+python.zip
+
+# Lambda Layer File
+python/
+
 # Mac OS File
 .DS_Store
 
