@@ -3,6 +3,7 @@ mac_chromedriver
 
 # Test File
 test.py
+reg_text.py
 
 # Confict file
 config.py
