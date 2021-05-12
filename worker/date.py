@@ -7,7 +7,11 @@ def get_year():
 
 
 def convert_datetime(date):
-    date = get_year() + '/' + date
-    date = datetime.strptime(date, '%Y/%m/%d')
-
+    if '/' in date:
+        date = get_year() + '/' + date
+        date = datetime.strptime(date, '%Y/%m/%d')
+    elif '.' in date:
+        date = get_year() + '/' + date
+        date = datetime.strptime(date, '%Y/%m.%d')
+        
     return date

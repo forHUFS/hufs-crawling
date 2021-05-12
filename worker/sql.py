@@ -73,14 +73,14 @@ def insert_date(date, table):
         pass
 
 
-def insert_data(_id, table, school, option, title, date, link):
+def insert_data(_id, table, campus, option, title, date, link):
     conn, cursor = create_connection()
     
-    school_id = get_id('scholarship_school_options', 'name', school)
+    campus_id = get_id('campuses', 'name', campus)
     option_id = get_id('scholarship_options', 'name', option)
 
-    columns = '(id, title, link, scholarship_school_option_id, scholarship_option_id'
-    values  = f'VALUES ("{_id}", "{title}", "{link}", "{school_id}", "{option_id}"'
+    columns = '(id, title, link, campus_id, scholarship_option_id'
+    values  = f'VALUES ("{_id}", "{title}", "{link}", "{campus_id}", "{option_id}"'
 
     if date:
         date_id = get_id('scholarship_dates', 'date', date)

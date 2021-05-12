@@ -142,7 +142,7 @@ class Scholarship:
         driver.close()
 
         for row in data:
-            insert_option(row['school'], 'scholarship_school_options')
+            insert_option(row['school'], 'campuses')
             insert_option(row['option'], 'scholarship_options')
             insert_date(row['date'], 'scholarship_dates')
 
