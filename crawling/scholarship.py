@@ -29,17 +29,17 @@ class Scholarship:
                     link    = content.find_element_by_css_selector("a").get_attribute("href")
                     title   = content.text
 
-                    school = remove_option_special_character(find_by_pattern(pattern['school'], title))
+                    campus = remove_option_special_character(find_by_pattern(pattern['campus'], title))
                     option = remove_option_special_character(find_by_pattern(pattern['option'], title))
                     date   = remove_date_special_character(find_by_pattern(pattern['date'], title))
 
                     title  = sub_date(title, date)
-                    title  = sub_option(pattern['school'], title)
+                    title  = sub_option(pattern['campus'], title)
                     title  = sub_option(pattern['option'], title)
                     
                     temp = []
 
-                    if school == '미지정':
+                    if campus == '미지정':
                         temp.append('캠퍼스')
 
                     if option == '미지정':
@@ -62,7 +62,7 @@ class Scholarship:
         
                     temp_data = {
                         'id'    : int(_id),
-                        'school': school,
+                        'campus': campus,
                         'option': option,
                         'title' : title,
                         'date'  : date,
@@ -74,14 +74,14 @@ class Scholarship:
         driver.close()
 
         for row in data:
-            insert_option(row['school'], 'scholarship_school_options')
+            insert_option(row['campus'], 'scholarship_campus_options')
             insert_option(row['option'], 'scholarship_options')
             insert_date(row['date'], 'scholarship_dates')
 
             insert_data(
                 _id    = int(row['id']),
                 table  = 'scholarships',
-                school = row['school'],
+                campus = row['campus'],
                 option = row['option'],
                 title  = row['title'],
                 date   = row['date'],
@@ -117,12 +117,12 @@ class Scholarship:
                     link    = content.find_element_by_css_selector("a").get_attribute("href")
                     title   = content.text
 
-                    school = remove_option_special_character(find_by_pattern(pattern['school'], title))
+                    campus = remove_option_special_character(find_by_pattern(pattern['campus'], title))
                     option = remove_option_special_character(find_by_pattern(pattern['option'], title))
                     date   = remove_date_special_character(find_by_pattern(pattern['date'], title))
 
                     title  = sub_date(title, date)
-                    title  = sub_option(pattern['school'], title)
+                    title  = sub_option(pattern['campus'], title)
                     title  = sub_option(pattern['option'], title)
                     
                     if date:
@@ -130,7 +130,7 @@ class Scholarship:
 
                     temp_data = {
                         'id'    : int(_id),
-                        'school': school,
+                        'campus': campus,
                         'option': option,
                         'title' : title,
                         'date'  : date,
@@ -142,14 +142,14 @@ class Scholarship:
         driver.close()
 
         for row in data:
-            insert_option(row['school'], 'campuses')
+            insert_option(row['campus'], 'campuses')
             insert_option(row['option'], 'scholarship_options')
             insert_date(row['date'], 'scholarship_dates')
 
             insert_data(
                 _id    = int(row['id']),
                 table  = 'scholarships',
-                school = row['school'],
+                campus = row['campus'],
                 option = row['option'],
                 title  = row['title'],
                 date   = row['date'],
