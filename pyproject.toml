@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "hufs-crawling"
 version = "0.1.0"
-description = "한국외국어대학교 커뮤니티 웹 서비스 <HUFSpace> 장학금 정보 크롤링 서비스"
+description = "[ HUFSpace ] 웹 크롤링 서비스"
 authors = ["2_taehyun <63915557+0417taehyun@users.noreply.github.com>"]
 
 [tool.poetry.dependencies]
