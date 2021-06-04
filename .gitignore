@@ -2,7 +2,7 @@
 mac_chromedriver
 
 # Test File
-test*.py
+test/
 
 # Confict file
 config.py

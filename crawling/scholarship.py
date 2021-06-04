@@ -1,16 +1,26 @@
+from config        import CRAWLING_URL
 from worker.driver import WebDriver
-from worker.regex import (
-    pattern, remove_option_special_character, remove_date_special_character,
-    find_by_pattern, sub_option, sub_date
-)
-from worker.date  import convert_datetime
-from worker.sql   import find_data, insert_option, insert_date, insert_data, close_connection
+from worker.date   import convert_datetime
+from worker.regex  import (
+                    pattern,
+                    remove_option_special_character,
+                    remove_date_special_character,
+                    find_by_pattern,
+                    sub_option,
+                    sub_date
+                    )
+from worker.sql    import (
+                    find_data,
+                    insert_option,
+                    insert_date,
+                    insert_data,
+                    close_connection
+                    )
+
 
 class Scholarship:
-    url      = 'http://hufs.ac.kr/user/indexSub.action?codyMenuSeq=37081&siteId=hufs&menuType=T&uId=4&sortChar=AB&linkUrl=04_0203.html&mainFrame=right&dum=dum&boardId=118188197&page='
-
     def get_scholarship_data(self):
-        url    = Scholarship.url +  '1'
+        url    = CRAWLING_URL +  '1'
         driver = WebDriver()
         driver.get(url = url)
 
@@ -102,7 +112,7 @@ class Scholarship:
         data = []
 
         for page_num in range(1, 6):
-            url    = Scholarship.url + str(page_num)
+            url    = CRAWLING_URL + str(page_num)
             driver = WebDriver()
             driver.get(url = url)
 
