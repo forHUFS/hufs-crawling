@@ -8,8 +8,7 @@ test/
 config.py
 
 # Lambda Upload Zip file
-lambda_function.Zip
-python.zip
+lambda_function.zip
 
 # Lambda Layer File
 python/
